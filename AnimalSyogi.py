@@ -1,3 +1,7 @@
+# Animal Shogi - Python implementation
+# Author: [あなたの名前]
+# This game simulates a 3x4 board Shogi-like game for 2 players or AI.
+
 import random
 
 
@@ -236,8 +240,11 @@ class AnimalSyogi:
                 self.ai_turn(self.turn)  # AIの行動
             else:
                 # 手動プレイヤーの操作
-                action = input(
-                    "駒を動かす場合は'M'、持ち駒を配置する場合は'P'を入力: ").strip().upper()
+                try:
+                    action = input("駒を動かす場合は'M'、配置は'P': ").strip().upper()
+                except EOFError:
+                    print("入力エラー。")
+                    return
                 if action == "M":
                     start = input("動かしたい駒の位置（例: A1）: ")
                     end = input("移動先の位置（例: A2）: ")
