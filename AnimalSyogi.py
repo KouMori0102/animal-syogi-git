@@ -243,7 +243,7 @@ class AnimalSyogi:
                 try:
                     action = input("駒を動かす場合は'M'、配置は'P': ").strip().upper()
                 except EOFError:
-                    print("入力エラー。")
+                    print("入力エラーが発生しました。終了します。")
                     return
                 if action == "M":
                     start = input("動かしたい駒の位置（例: A1）: ")
